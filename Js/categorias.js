@@ -10,7 +10,7 @@ const categorias = [
         id: 2,
         nome: "Monitores",
         descricao: "Notebooks, computadores e acessórios",
-        imagem: "https://picsum.photos/600/400?random=2"
+        imagem: "assets/imagens/monitor.png"
     },
     {
         id: 3,
@@ -22,7 +22,7 @@ const categorias = [
         id: 4,
         nome: "Teclados",
         descricao: "Móveis para casa e escritório",
-        imagem: "https://picsum.photos/600/400?random=4"
+        imagem: "assets/imagens/Fone redragao.png"
     },
     {
         id: 5,

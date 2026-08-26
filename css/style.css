@@ -567,3 +567,62 @@ footer {
     overflow: hidden;
     background-color: #222;
 }
+
+/* =========================
+   PÁGINA 404
+========================= */
+
+.erro-404 {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    padding: 40px 80px;
+}
+
+.erro-conteudo {
+    max-width: 500px;
+}
+
+.erro-conteudo h1 {
+    color: #9147ff;
+    font-size: 100px;
+    margin: 0;
+    line-height: 1;
+}
+
+.erro-conteudo h2 {
+    color: #ffffff;
+    font-size: 32px;
+    margin: 15px 0;
+}
+
+.erro-conteudo p {
+    color: #b8b5c0;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.botao-inicio {
+    display: inline-block;
+    background-color: #9147ff;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 13px 24px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.botao-inicio:hover {
+    background-color: #a96aff;
+}
+
+.erro-imagem img {
+    width: 380px;
+    max-width: 100%;
+    display: block;
+}
