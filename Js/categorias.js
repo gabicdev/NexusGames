@@ -2,14 +2,14 @@
 const categorias = [
     {
         id: 1,
-        nome: "Eletrônicos",
+        nome: "Mouses",
         descricao: "Celulares, televisores e eletrônicos em geral",
-        imagem: "https://picsum.photos/600/400?random=1"
+        imagem: "assets/imagens/Mouse Logitech.png"
     },
     {
         id: 2,
         nome: "Monitores",
-        descricao: "Notebooks, computadores e acessórios",
+        descricao: "Monitores, Notebooks, computadores e acessórios",
         imagem: "assets/imagens/monitor.png"
     },
     {
@@ -22,13 +22,13 @@ const categorias = [
         id: 4,
         nome: "Teclados",
         descricao: "Móveis para casa e escritório",
-        imagem: "assets/imagens/Fone redragao.png"
+        imagem: "assets/imagens/tecladoredragao.png"
     },
     {
         id: 5,
-        nome: "Games",
+        nome: "Controles",
         descricao: "Jogos, consoles e acessórios",
-        imagem: "https://picsum.photos/600/400?random=5"
+        imagem: "assets/imagens/Controleps5.png"
     }
 ];
 

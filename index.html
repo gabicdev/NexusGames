@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Ícones -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
     <script src="js/header.js"></script>
 
     <!-- HEADER -->
-   <!-- <header>
+    <!-- <header>
         <nav class="navbar">
 
             <a href="index.html" class="logo">
@@ -74,7 +74,7 @@
                     Equipamentos para elevar seu setup ao próximo nível.
                 </p>
 
-                <a href="#produtos" class="botao">
+                <a href="produtos.html" class="botao">
                     VER PRODUTOS
                 </a>
 
@@ -84,8 +84,7 @@
             <div class="hero-imagem">
 
                 <!-- Depois colocamos a imagem do headset -->
-                <img src="assets/imagens/Fone razer.png"
-                     alt="Headset Gamer">
+                <img src="assets/imagens/Fone razer.png" alt="Headset Gamer">
 
             </div>
 
@@ -93,22 +92,49 @@
 
 
         <!-- CATEGORIAS -->
-<section class="categorias">
+        <section class="categorias">
 
-    <div class="titulo-secao">
-        <h2>CATEGORIAS</h2>
-        
-    </div>
+            <div class="titulo-secao">
+                <h2>CATEGORIAS</h2>
 
-    <div id="listaCategorias" class="categorias-grid">
-        <!-- Os cards serão inseridos aqui pelo JavaScript -->
-    </div>
+            </div>
 
-</section>
+            <div id="listaCategorias" class="categorias-grid">
+                <!-- Os cards serão inseridos aqui pelo JavaScript -->
+            </div>
+
+        </section>
+
+
+        <section class="produtos-destaque produtos">
+
+            <div class="titulo-produtos titulo-secao">
+                <h2>PRODUTOS EM DESTAQUE</h2>
+                <a href="produtos.html">Ver produtos</a>
+            </div>
+
+            <div class="carrossel">
+
+                <button class="btn-carrossel" id="anterior">‹</button>
+
+                <div class="lista-produtos" id="listaProdutos">
+                    <!-- Os produtos serão colocados pelo JavaScript -->
+                </div>
+
+                <button class="btn-carrossel" id="proximo">›</button>
+
+            </div>
+
+        </section>
+
+
+
+
+
 
 
         <!-- PRODUTOS EM DESTAQUE -->
-        <section class="produtos" id="produtos">
+        <!--         <section class="produtos" id="produtos">
 
             <div class="titulo-secao">
 
@@ -117,19 +143,17 @@
                 <a href="produtos.html">Ver produtos</a>
 
             </div>
-
+ 
 
             <div class="produtos-grid">
 
-
-                <!-- PRODUTO 1 -->
                 <article class="produto-card">
 
                     <span class="avaliacao">
                         <i class="fa-solid fa-star"></i> 4.8
                     </span>
 
-                    <img src="assets/imagens/Mouse Logitech.webp"
+                    <img src="assets/imagens/Mouse Logitech.png"
                          alt="Mouse Gamer Logitech">
 
                     <h3>Mouse Gamer Logitech G Pro X Superlight</h3>
@@ -141,7 +165,7 @@
                 </article>
 
 
-                <!-- PRODUTO 2 -->
+                
                 <article class="produto-card">
 
                     <span class="avaliacao">
@@ -162,7 +186,7 @@
                 </article>
 
 
-                <!-- PRODUTO 3 -->
+               
                 <article class="produto-card">
 
                     <span class="avaliacao">
@@ -181,14 +205,14 @@
                 </article>
 
 
-                <!-- PRODUTO 4 -->
+              
                 <article class="produto-card">
 
                     <span class="avaliacao">
                         <i class="fa-solid fa-star"></i> 4.8
                     </span>
 
-                    <img src="assets/imagens/jogo.png"
+                    <img src="assets/imagens/Gta6.png"
                          alt="Jogo">
 
                     <h3>
@@ -202,14 +226,14 @@
                 </article>
 
 
-                <!-- PRODUTO 5 -->
+               
                 <article class="produto-card">
 
                     <span class="avaliacao">
                         <i class="fa-solid fa-star"></i> 4.8
                     </span>
 
-                    <img src="assets/imagens/macbook.png"
+                    <img src="assets/imagens/Apple 2026 MacBook Pro 13 Pol.png"
                          alt="MacBook">
 
                     <h3>Apple 2026 MacBook Pro 13 Pol.</h3>
@@ -224,7 +248,7 @@
             </div>
 
         </section>
-
+ -->
     </main>
 
 
@@ -278,8 +302,10 @@
     </footer>
 
 
-<script src="js/header.js"></script>
-<script src="js/categorias.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/categorias.js"></script>
+    <script src="js/produtos.js"></script>
 
 </body>
+
 </html>
