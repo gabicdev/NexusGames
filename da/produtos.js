@@ -193,7 +193,6 @@ if (listaProdutos) {
 
 }
 
-
 // CARROSSEL
 
 const btnAnterior = document.getElementById("anterior");
