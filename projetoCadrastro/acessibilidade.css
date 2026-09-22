@@ -1,0 +1,221 @@
+/* ============================= */
+/* TEMA CLARO                    */
+/* ============================= */
+
+body.tema-claro {
+    background-color: #f5f5f5;
+    color: #111111;
+}
+
+body.tema-claro form {
+    background-color: #ffffff;
+}
+
+body.tema-claro header {
+    background-color: #ffffff;
+}
+
+body.tema-claro header span:first-child {
+    color: #111111;
+}
+
+body.tema-claro header span:last-child {
+    color: #8b5cf6;
+}
+
+body.tema-claro .campo input {
+    color: #111111;
+    border-color: #8b5cf652;
+}
+
+body.tema-claro .campo input:focus {
+    border-color: #8b4dff;
+}
+
+body.tema-claro .campo input:focus + label,
+body.tema-claro .campo.campo-preenchido label {
+    background-color: #ffffff;
+}
+
+body.tema-claro .voltar {
+    color: #111111;
+}
+
+
+/* ============================= */
+/* PAINEL NO TEMA CLARO          */
+/* ============================= */
+
+body.tema-claro .painel-acessibilidade {
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+body.tema-claro .opcao-acessibilidade button {
+    background-color: #eeeeee;
+    color: #111111;
+}
+
+
+/* ============================= */
+/* TEMA ESCURO                   */
+/* ============================= */
+
+body.tema-escuro {
+    background-color: #08080d;
+    color: white;
+}
+
+body.tema-escuro form {
+    background-color: #15121F;
+}
+
+body.tema-escuro header {
+    background-color: #0d0d14;
+}
+
+
+/* ============================= */
+/* BOTÃO DE ACESSIBILIDADE       */
+/* ============================= */
+
+.acessibilidade {
+    position: fixed;
+
+    left: 0;
+    top: 50%;
+
+    z-index: 1000;
+
+    cursor: grab;
+
+    user-select: none;
+}
+
+.acessibilidade.arrastando {
+    cursor: grabbing;
+}
+
+.botao-acessibilidade {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #8b5cf6;
+
+    color: white;
+
+    font-size: 1.25rem;
+
+    cursor: pointer;
+
+    touch-action: none;
+}
+
+
+/* ============================= */
+/* PAINEL                        */
+/* ============================= */
+
+.painel-acessibilidade {
+    display: none;
+
+    position: absolute;
+
+    left: 50px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 180px;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    background-color: #15121F;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* PAINEL ABERTO */
+
+.painel-acessibilidade.exibir {
+    display: block;
+}
+
+
+/* ============================= */
+/* OPÇÕES                        */
+/* ============================= */
+
+.opcao-acessibilidade {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-bottom: 12px;
+}
+
+.opcao-acessibilidade:last-child {
+    margin-bottom: 0;
+}
+
+.opcao-acessibilidade span {
+    width: 100%;
+
+    color: #8b5cf6;
+
+    font-size: 0.75rem;
+
+    font-weight: bold;
+}
+
+.opcao-acessibilidade button {
+    border: none;
+
+    border-radius: 6px;
+
+    padding: 6px 9px;
+
+    background-color: #252033;
+
+    color: white;
+
+    font-size: 0.6875rem;
+
+    cursor: pointer;
+}
+
+.opcao-acessibilidade button:hover {
+    background-color: #8b5cf6;
+}
+
+
+/* ============================= */
+/* RESPONSIVIDADE DO BOTÃO       */
+/* ============================= */
+
+@media (max-width: 700px) {
+
+    .botao-acessibilidade {
+        width: 40px;
+        height: 40px;
+
+        font-size: 1.125rem;
+    }
+
+    .painel-acessibilidade {
+        width: 170px;
+
+        padding: 12px;
+    }
+}
