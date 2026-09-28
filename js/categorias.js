@@ -43,14 +43,14 @@ if (listaCategorias) {
 
         listaCategorias.innerHTML += `
 
-            <div class="categoria-card">
+            <div class="categoria-card" onclick="abrirCategoria(${categoria.id})">
 
-                <img src="${categoria.imagem}"
-                     alt="${categoria.nome}">
+    <img src="${categoria.imagem}" 
+         alt="${categoria.nome}">
 
-                <p>${categoria.nome}</p>
+    <p>${categoria.nome}</p>
 
-            </div>
+</div>
 
         `;
 

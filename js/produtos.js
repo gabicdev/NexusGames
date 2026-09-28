@@ -220,3 +220,5 @@ if (btnAnterior && btnProximo && listaProdutos) {
     });
 
 }
+
+// produtos -->

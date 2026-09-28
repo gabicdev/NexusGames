@@ -1,0 +1,229 @@
+/* =========================
+   PÁGINA DO CARRINHO
+========================= */
+
+.pagina-carrinho {
+    padding: 40px 60px;
+}
+
+.pagina-carrinho h1 {
+    margin-bottom: 30px;
+}
+
+.conteudo-carrinho {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+    align-items: start;
+}
+
+
+/* ITENS */
+
+.itens-carrinho {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.item-carrinho {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 20px;
+
+    background: #11111a;
+    border: 1px solid #242433;
+    border-radius: 12px;
+}
+
+.item-carrinho img {
+    width: 110px;
+    height: 90px;
+
+    object-fit: contain;
+}
+
+.info-produto {
+    flex: 1;
+}
+
+.info-produto h3 {
+    margin: 0 0 8px;
+}
+
+.avaliacao {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.avaliacao span {
+    color: #888;
+    font-size: 11px;
+}
+
+.preco-produto {
+    color: #a855f7;
+}
+
+
+/* QUANTIDADE */
+
+.quantidade {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantidade button {
+    width: 30px;
+    height: 30px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #242433;
+    color: white;
+
+    cursor: pointer;
+}
+
+.quantidade span {
+    min-width: 20px;
+    text-align: center;
+}
+
+
+/* REMOVER */
+
+.btn-remover {
+    border: none;
+    background: transparent;
+
+    color: #888;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.btn-remover:hover {
+    color: #ef4444;
+}
+
+
+/* RESUMO */
+
+.resumo-carrinho {
+    padding: 25px;
+
+    background: #11111a;
+    border: 1px solid #242433;
+    border-radius: 12px;
+}
+
+.resumo-carrinho h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.linha-resumo,
+.total-carrinho {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.linha-resumo span {
+    color: #aaa;
+}
+
+.total-carrinho {
+    font-size: 20px;
+}
+
+.total-carrinho strong {
+    color: #a855f7;
+}
+
+.resumo-carrinho hr {
+    border: none;
+    border-top: 1px solid #242433;
+    margin: 20px 0;
+}
+
+
+/* FINALIZAR */
+
+.btn-finalizar {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #7c3aed;
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.btn-finalizar:hover {
+    background: #9333ea;
+}
+
+
+/* CARRINHO VAZIO */
+
+.carrinho-vazio {
+    padding: 60px 20px;
+
+    text-align: center;
+
+    background: #11111a;
+    border: 1px solid #242433;
+    border-radius: 12px;
+}
+
+.carrinho-vazio i {
+    font-size: 40px;
+    color: #7c3aed;
+}
+
+.carrinho-vazio p {
+    color: #888;
+}
+
+.carrinho-vazio a {
+    display: inline-block;
+
+    margin-top: 15px;
+    padding: 10px 20px;
+
+    border-radius: 6px;
+
+    background: #7c3aed;
+    color: white;
+
+    text-decoration: none;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 800px) {
+
+    .pagina-carrinho {
+        padding: 30px 20px;
+    }
+
+    .conteudo-carrinho {
+        grid-template-columns: 1fr;
+    }
+
+}

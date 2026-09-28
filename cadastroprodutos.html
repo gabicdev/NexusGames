@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro de Produtos | SPAN Games</title>
+
+<link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cadastroprodutos.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div id="header"></div>
+
+
+    <main class="pagina-cadastro-produto">
+
+        <section class="formulario-produto">
+
+            <h1>Cadastro de Produtos</h1>
+
+
+            <div class="formulario-conteudo">
+
+                <!-- PARTE ESQUERDA -->
+                <div class="campos-produto">
+
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Nome"
+                    >
+
+                    <textarea
+                        id="descricao"
+                        placeholder="Descrição"
+                    ></textarea>
+
+
+                    <div class="linha-campos">
+
+                        <select id="categoria">
+
+                            <option value="">
+                                Categoria
+                            </option>
+
+                            <option value="1">
+                                Mouses
+                            </option>
+
+                            <option value="2">
+                                Monitores
+                            </option>
+
+                            <option value="3">
+                                Headsets
+                            </option>
+
+                            <option value="4">
+                                Teclados
+                            </option>
+
+                            <option value="5">
+                                Controles
+                            </option>
+
+                        </select>
+
+
+                        <input
+                            type="number"
+                            id="preco"
+                            placeholder="Preço"
+                            step="0.01"
+                        >
+
+                    </div>
+
+
+                    <div class="linha-campos">
+
+                        <input
+                            type="number"
+                            id="precoOferta"
+                            placeholder="Preço de Oferta"
+                            step="0.01"
+                        >
+
+                        <input
+                            type="number"
+                            id="estoque"
+                            placeholder="Quantidade de Estoque"
+                        >
+
+                    </div>
+
+
+                    <div class="opcoes-produto">
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                id="oferta"
+                            >
+                            Oferta
+                        </label>
+
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                id="destaque"
+                            >
+                            Destaque
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PARTE DIREITA -->
+                <div class="upload-produto">
+
+                    <label
+                        for="imagem"
+                        class="area-imagem"
+                    >
+
+                        <i class="fa-solid fa-camera"></i>
+
+                        <span>
+                            Adicionar imagem
+                        </span>
+
+                    </label>
+
+                    <input
+                        type="file"
+                        id="imagem"
+                        accept="image/*"
+                        hidden
+                    >
+
+                    <img
+                        id="previewImagem"
+                        class="preview-imagem"
+                        alt="Preview"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="btnSalvar"
+                class="btn-salvar"
+            >
+                Salvar
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/header.js"></script>
+<script src="js/dadosprodutos.js"></script>
+<script src="js/cadastroprodutos.js"></script>
+
+</body>
+
+</html>
