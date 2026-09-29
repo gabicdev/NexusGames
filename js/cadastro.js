@@ -1120,14 +1120,14 @@ mostrarSenha.addEventListener("click", function () {
 
         senha.type = "text";
 
-        imagem.src = "ativos/icones/eye.svg";
+        imagem.src = "assets/icones/eye.svg";
         imagem.alt = "Esconder senha";
 
     } else {
 
         senha.type = "password";
 
-        imagem.src = "ativos/icones/eyeoff.svg";
+        imagem.src = "assets/icones/eyeoff.svg";
         imagem.alt = "Mostrar senha";
     }
 });
@@ -1141,14 +1141,14 @@ mostrarConfirmacao.addEventListener("click", function () {
 
         confirmacao.type = "text";
 
-        imagem.src = "ativos/icones/eye.svg";
+        imagem.src = "assets/icones/eye.svg";
         imagem.alt = "Esconder confirmação de senha";
 
     } else {
 
         confirmacao.type = "password";
 
-        imagem.src = "ativos/icones/eyeoff.svg";
+        imagem.src = "assets/icones/eyeoff.svg";
         imagem.alt = "Mostrar confirmação de senha";
     }
 });
