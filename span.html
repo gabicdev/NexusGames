@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Span Games - Checkout</title>
+<link rel="stylesheet" href="span.css">
+</head>
+<body>
+<div class="card">
+  <div class="header">
+    <div class="info">
+      <b>Jogo: Cyberpunk 2077 - Edição Ultimate</b><br>
+      Valor: R$ 299,90
+    </div>
+    <h2>🎮 Span Games - Checkout</h2>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" id="t-pix" onclick="openTab('pix')">PIX</button>
+    <button class="tab" id="t-cartao" onclick="openTab('cartao')">Cartão</button>
+    <button class="tab" id="t-boleto" onclick="openTab('boleto')">Boleto</button>
+  </div>
+
+  <!-- PIX -->
+  <div id="pix">
+    <span class="label">PIX Copia e Cola</span>
+    <div class="qrbox">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=contato@spangames.com">
+      <div class="pix-key">contato@spangames.com - R$ 299,90</div>
+    </div>
+    <button class="btn-green" onclick="pagar('PIX')">Pagar R$ 299,90</button>
+  </div>
+
+  <!-- CARTÃO -->
+  <div id="cartao" class="hidden">
+    <span class="label">Número do Cartão</span>
+    <input class="input" id="num" placeholder="0000 0000 0000 0000" maxlength="19">
+    <span class="label">Nome no Cartão</span>
+    <input class="input" placeholder="NOME COMPLETO">
+    <div class="row">
+      <div style="flex:1"><span class="label">Validade</span><input class="input" placeholder="MM/AA" maxlength="5"></div>
+      <div style="flex:1"><span class="label">CVV</span><input class="input" placeholder="123" maxlength="3"></div>
+    </div>
+    <button class="btn-green" onclick="validarCartao()">Pagar R$ 299,90</button>
+  </div>
+
+  <!-- BOLETO -->
+  <div id="boleto" class="hidden">
+    <span class="label">CPF</span>
+    <input class="input" id="cpf" placeholder="000.000.000-00" maxlength="14">
+    <span class="label">Nome Completo</span>
+    <input class="input" placeholder="Seu nome completo">
+    <span class="label">E-mail</span>
+    <input class="input" type="email" placeholder="seu@email.com">
+    <button class="btn-green" onclick="pagar('Boleto')">Gerar Boleto</button>
+  </div>
+</div>
+<script src="span.js "></script>
+</body>
+</html>
