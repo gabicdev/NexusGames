@@ -1,0 +1,460 @@
+/* ==============================
+   VARIÁVEIS
+============================== */
+
+:root {
+
+    --roxo-principal: #8b5cf6;
+    --roxo-hover: #7442e8;
+
+    --fundo-pagina: #100f12;
+    --fundo-header: #15141b;
+    --fundo-caixa: #17131f;
+
+    --texto-branco: #ffffff;
+    --texto-secundario: #a6a3ad;
+
+    --erro: #ff6b6b;
+    --sucesso: #6ee7a8;
+}
+
+
+
+/* ==============================
+   CONFIGURAÇÃO GERAL
+============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: Arial, sans-serif;
+
+    background-color: var(--fundo-pagina);
+
+    color: var(--texto-branco);
+}
+
+
+
+/* ==============================
+   CABEÇALHO
+============================== */
+
+header {
+
+    background-color: var(--fundo-header);
+
+    display: flex;
+    align-items: center;
+
+    padding: 14px 40px;
+}
+
+
+.link-logo {
+
+    text-decoration: none;
+
+    color: inherit;
+}
+
+
+.logo {
+
+    margin: 0;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    color: var(--texto-branco);
+}
+
+
+.logo span {
+
+    color: var(--roxo-principal);
+}
+
+
+
+/* ==============================
+   ÁREA PRINCIPAL
+============================== */
+
+.conteudo-login {
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 32px;
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 64px auto;
+
+    padding: 0 24px;
+}
+
+
+
+/* ==============================
+   CAIXAS
+============================== */
+
+.area-login,
+.area-cadastro {
+
+    flex: 1;
+
+    min-height: 480px;
+
+    padding: 32px;
+
+    background-color: var(--fundo-caixa);
+
+    border-radius: 10px;
+}
+
+
+
+/* ==============================
+   ÁREA LOGIN
+============================== */
+
+.area-login {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.area-login h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 34px;
+
+    text-align: center;
+}
+
+
+
+/* ==============================
+   FORMULÁRIO
+============================== */
+
+.form-login {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.grupo-campo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+
+
+/* ==============================
+   LABEL FLUTUANTE
+============================== */
+
+.campo-flutuante {
+
+    position: relative;
+}
+
+
+.campo-flutuante label {
+
+    position: absolute;
+
+    left: 18px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: var(--roxo-principal);
+
+    font-size: 16px;
+
+    pointer-events: none;
+
+    transition: 0.2s;
+}
+
+
+.campo-flutuante input:focus + label,
+.campo-flutuante input:not(:placeholder-shown) + label {
+
+    top: 0;
+
+    font-size: 14px;
+
+    color: var(--roxo-principal);
+
+    background-color: var(--fundo-caixa);
+
+    padding: 0 5px;
+}
+
+
+
+/* ==============================
+   INPUTS
+============================== */
+
+.campo-login {
+
+    width: 100%;
+
+    padding: 16px 18px;
+
+    border: 2px solid var(--roxo-principal);
+
+    border-radius: 12px;
+
+    background-color: var(--fundo-caixa);
+
+    color: var(--texto-branco);
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+
+
+/* ==============================
+   MENSAGENS DOS CAMPOS
+============================== */
+
+.mensagem-campo {
+
+    min-height: 18px;
+
+    margin: 0;
+
+    font-size: 13px;
+
+    color: var(--erro);
+}
+
+
+
+/* ==============================
+   BOTÃO LOGIN
+============================== */
+
+.botao-login {
+
+    align-self: center;
+
+    width: 210px;
+
+    margin-top: 8px;
+
+    padding: 14px 36px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: var(--roxo-principal);
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.botao-login:hover {
+
+    background-color: var(--roxo-hover);
+}
+
+
+.botao-login:disabled {
+
+    opacity: 0.7;
+
+    cursor: not-allowed;
+}
+
+
+
+/* ==============================
+   MENSAGEM GERAL DO LOGIN
+============================== */
+
+.mensagem-login {
+
+    min-height: 20px;
+
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+.mensagem-login.erro {
+
+    color: var(--erro);
+}
+
+
+.mensagem-login.sucesso {
+
+    color: var(--sucesso);
+}
+
+
+
+/* ==============================
+   ÁREA CADASTRO
+============================== */
+
+.area-cadastro {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.icone-cadastro {
+
+    margin-bottom: 8px;
+
+    color: var(--texto-branco);
+}
+
+
+.area-cadastro h2 {
+
+    margin-bottom: 10px;
+}
+
+
+.texto-cadastro {
+
+    max-width: 320px;
+
+    line-height: 1.5;
+
+    color: var(--texto-secundario);
+}
+
+
+.texto-cadastro span {
+
+    color: var(--roxo-principal);
+
+    font-weight: bold;
+}
+
+
+
+/* ==============================
+   BOTÃO CADASTRO
+============================== */
+
+.botao-cadastro {
+
+    width: 210px;
+
+    margin-top: 28px;
+
+    padding: 14px 48px;
+
+    border-radius: 10px;
+
+    background-color: var(--roxo-principal);
+
+    color: white;
+
+    text-decoration: none;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+
+.botao-cadastro:hover {
+
+    background-color: var(--roxo-hover);
+}
+
+
+
+/* ==============================
+   RODAPÉ
+============================== */
+
+.rodape {
+
+    padding: 20px;
+
+    background-color: var(--fundo-header);
+
+    color: var(--texto-secundario);
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+.rodape p {
+
+    margin: 0;
+}
