@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Login | STAN GAMES</title>
+
+    <link
+        rel="stylesheet"
+        href="css/login.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- ==============================
+         CABEÇALHO
+    ============================== -->
+
+    <header>
+
+        <a href="index.html" class="link-logo">
+
+            <h1 class="logo">
+                STAN <span>GAMES</span>
+            </h1>
+
+        </a>
+
+    </header>
+
+
+
+    <!-- ==============================
+         CONTEÚDO PRINCIPAL
+    ============================== -->
+
+    <main class="conteudo-login">
+
+
+        <!-- ==============================
+             ÁREA DE LOGIN
+        ============================== -->
+
+        <section class="area-login">
+
+            <h2>Acesse a sua conta</h2>
+
+
+            <form
+                class="form-login"
+                id="formLogin"
+                novalidate
+            >
+
+
+                <!-- LOGIN -->
+
+                <div class="grupo-campo">
+
+                    <div class="campo-flutuante">
+
+                        <input
+                            type="text"
+                            id="login"
+                            name="login"
+                            class="campo-login"
+                            placeholder=" "
+                            maxlength="6"
+                            autocomplete="username"
+                        >
+
+                        <label for="login">
+                            Digite o seu login
+                        </label>
+
+                    </div>
+
+                    <p
+                        class="mensagem-campo"
+                        id="erroLogin"
+                    ></p>
+
+                </div>
+
+
+
+                <!-- SENHA -->
+
+                <div class="grupo-campo">
+
+                    <div class="campo-flutuante">
+
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            class="campo-login"
+                            placeholder=" "
+                            maxlength="8"
+                            autocomplete="current-password"
+                        >
+
+                        <label for="senha">
+                            Digite a sua senha
+                        </label>
+
+                    </div>
+
+                    <p
+                        class="mensagem-campo"
+                        id="erroSenha"
+                    ></p>
+
+                </div>
+
+
+
+                <!-- BOTÃO -->
+
+                <button
+                    type="submit"
+                    class="botao-login"
+                >
+                    Acessar conta
+                </button>
+
+
+
+                <!-- MENSAGEM DO LOGIN -->
+
+                <p
+                    id="mensagemLogin"
+                    class="mensagem-login"
+                    aria-live="polite"
+                ></p>
+
+            </form>
+
+        </section>
+
+
+
+        <!-- ==============================
+             ÁREA DE CADASTRO
+        ============================== -->
+
+        <section class="area-cadastro">
+
+            <div class="icone-cadastro">
+
+                <svg
+                    width="45"
+                    height="45"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                >
+
+                    <circle
+                        cx="12"
+                        cy="8"
+                        r="4"
+                    ></circle>
+
+                    <path
+                        d="M4 21v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2"
+                    ></path>
+
+                    <path
+                        d="M19 5v6"
+                    ></path>
+
+                    <path
+                        d="M16 8h6"
+                    ></path>
+
+                </svg>
+
+            </div>
+
+
+            <h2>Novo por aqui?</h2>
+
+
+            <p class="texto-cadastro">
+
+                Crie sua conta e aproveite todos
+                os benefícios de ser um cliente
+
+                <span>STAN GAMES</span>
+
+            </p>
+
+
+            <a
+                href="cadastro.html"
+                class="botao-cadastro"
+            >
+                Criar conta
+            </a>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ==============================
+         RODAPÉ
+    ============================== -->
+
+    <footer class="rodape">
+
+        <p>
+            © 2026 STAN GAMES -
+            Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>
