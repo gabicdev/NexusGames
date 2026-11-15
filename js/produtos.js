@@ -60,20 +60,6 @@ const produtos = [
         oferta: true,
         destaque: true
     },
-
-      {
-        id: 6,
-        nome: "Webcam Full HD",
-        idcategoria: 6,
-        descrição: "Webcam Full HD ideal para transmissões, chamadas e criação de conteúdo.",
-        preço: 199.90,
-        preçooferta: 169.90,
-        quantidadedeestoque: 18,
-        urlimagem: "imagens/webcam-fullhd.jpg",
-        oferta: true,
-        destaque: false
-    },
-
       {
         id: 7,
         nome: "Mouse Gamer Sem Fio Logitech G305 Lightspeed, 12.000 DPI, 6 Botões Programáveis, Branco",
@@ -99,33 +85,6 @@ const produtos = [
         oferta: true,
         destaque: true
     },
-
-    {
-        id: 9,
-        nome: "Microfone Gamer USB",
-        idcategoria: 9,
-        descrição: "Microfone USB com captação de áudio de alta qualidade para jogos e transmissões.",
-        preço: 349.90,
-        preçooferta: 299.90,
-        quantidadedeestoque: 14,
-        urlimagem: "imagens/microfone-gamer.jpg",
-        oferta: true,
-        destaque: false
-    },
-
-    {
-        id: 10,
-        nome: "SSD NVMe 1TB",
-        idcategoria: 10,
-        descrição: "SSD NVMe de 1TB com alta velocidade de leitura e gravação para melhorar o desempenho do computador.",
-        preço: 499.90,
-        preçooferta: 429.90,
-        quantidadedeestoque: 20,
-        urlimagem: "imagens/ssd-nvme.jpg",
-        oferta: true,
-        destaque: false
-    }
-
 ];
 
 

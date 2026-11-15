@@ -88,11 +88,7 @@ function protegerCheckout() {
             "span.html"
         );
 
-        alert(
-            "Você precisa entrar em uma conta para finalizar a compra."
-        );
-
-        window.location.replace("login.html");
+        window.location.replace("erro-pagamento-login.html");
 
         return false;
     }
@@ -673,11 +669,7 @@ function verificarLoginPagamento() {
             "span.html"
         );
 
-        alert(
-            "Você precisa entrar em uma conta para realizar o pagamento."
-        );
-
-        window.location.replace("login.html");
+       window.location.replace("erro-pagamento-login.html");
 
         return false;
     }

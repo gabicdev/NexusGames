@@ -14,6 +14,7 @@ const rua = document.getElementById("rua");
 const bairro = document.getElementById("bairro");
 const cidade = document.getElementById("cidade");
 const uf = document.getElementById("uf");
+const numero = document.getElementById("numero");
 const login = document.getElementById("login");
 const senha = document.getElementById("senha");
 const confirmacao = document.getElementById("confirmacao");
@@ -47,6 +48,7 @@ const erroRua = document.getElementById("erroRua");
 const erroBairro = document.getElementById("erroBairro");
 const erroCidade = document.getElementById("erroCidade");
 const erroUf = document.getElementById("erroUf");
+const erroNumero = document.getElementById("erroNumero");
 const erroLogin = document.getElementById("erroLogin");
 const erroSenha = document.getElementById("erroSenha");
 const erroConfirmacao = document.getElementById("erroConfirmacao");
@@ -529,6 +531,57 @@ function validarCEP(mostrarValido) {
 
     erroCep.textContent = "CEP válido.";
     erroCep.classList.add("valido");
+
+    return true;
+}
+
+
+// ==============================
+// NÚMERO DA RESIDÊNCIA
+// ==============================
+
+numero.addEventListener("input", function () {
+
+    numero.value = numero.value.replace(/\D/g, "").substring(0, 10);
+
+    atualizarLabel(numero);
+
+    erroNumero.classList.remove("valido");
+
+    validarNumero(false);
+});
+
+numero.addEventListener("blur", function () {
+    validarNumero(true);
+});
+
+
+function validarNumero(mostrarValido) {
+
+    const valor = numero.value.trim();
+
+    erroNumero.classList.remove("valido");
+
+    if (valor.length === 0) {
+
+        erroNumero.textContent = "Preenchimento obrigatório*";
+        return false;
+    }
+
+    if (!/^\d+$/.test(valor)) {
+
+        erroNumero.textContent = "Informe apenas números.";
+        return false;
+    }
+
+    if (!mostrarValido) {
+
+        erroNumero.textContent = "";
+        return true;
+    }
+
+    erroNumero.textContent = "Número válido.";
+    erroNumero.classList.add("valido");
 
     return true;
 }
@@ -1207,6 +1260,10 @@ formulario.addEventListener("submit", function (event) {
         return;
     }
 
+    if (!validarNumero(true)) {
+        return;
+    }
+
     if (!validarLogin(true)) {
         return;
     }
@@ -1248,6 +1305,7 @@ formulario.addEventListener("submit", function (event) {
         bairro: bairro.value,
         cidade: cidade.value,
         uf: uf.value,
+        numero: numero.value,
         celular: celular.value,
         telefone: telefone.value,
         login: login.value,
