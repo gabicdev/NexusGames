@@ -1298,7 +1298,7 @@ formulario.addEventListener("submit", function (event) {
 
     setTimeout(function () {
 
-        window.location.href = "NOME-DO-LOGIN.html";
+        window.location.href = "login.html";
 
     }, 2000);
 });

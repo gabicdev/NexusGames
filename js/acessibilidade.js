@@ -1,31 +1,40 @@
-const acessibilidade = document.querySelector(".acessibilidade");
-const botaoAcessibilidade = document.querySelector("#botaoAcessibilidade");
-const painelAcessibilidade = document.querySelector("#painelAcessibilidade");
+// =========================================
+// ACESSIBILIDADE
+// =========================================
 
-const temaClaro = document.querySelector("#temaClaro");
-const temaEscuro = document.querySelector("#temaEscuro");
+const temaClaro =
+    document.getElementById("temaClaro");
 
-const aumentarFonte = document.querySelector("#aumentarFonte");
-const diminuirFonte = document.querySelector("#diminuirFonte");
+const temaEscuro =
+    document.getElementById("temaEscuro");
+
+const aumentarFonte =
+    document.getElementById("aumentarFonte");
+
+const diminuirFonte =
+    document.getElementById("diminuirFonte");
 
 
-// =============================
+// =========================================
 // CONFIGURAÇÕES SALVAS
-// =============================
+// =========================================
 
-let tamanhoFonte = Number(
-    localStorage.getItem("tamanhoFonte")
-) || 16;
+const tamanhoSalvo = Number(localStorage.getItem("tamanhoFonte"));
 
-const temaSalvo = localStorage.getItem("tema");
+let tamanhoFonte =
+    Number.isInteger(tamanhoSalvo) &&
+    tamanhoSalvo >= 12 &&
+    tamanhoSalvo <= 24
+        ? tamanhoSalvo
+        : 16;
 
-const posicaoX = localStorage.getItem("acessibilidadeX");
-const posicaoY = localStorage.getItem("acessibilidadeY");
+const temaSalvo =
+    localStorage.getItem("tema");
 
 
-// =============================
-// APLICAR CONFIGURAÇÕES
-// =============================
+// =========================================
+// APLICAR TAMANHO DA FONTE
+// =========================================
 
 function aplicarTamanhoFonte() {
 
@@ -39,6 +48,10 @@ function aplicarTamanhoFonte() {
 }
 
 
+// =========================================
+// APLICAR TEMA
+// =========================================
+
 function aplicarTema(tema) {
 
     document.body.classList.remove(
@@ -48,244 +61,106 @@ function aplicarTema(tema) {
 
     document.body.classList.add(tema);
 
-    localStorage.setItem("tema", tema);
+    localStorage.setItem(
+        "tema",
+        tema
+    );
 }
 
 
-function aplicarPosicao() {
-
-    if (posicaoX !== null && posicaoY !== null) {
-
-        acessibilidade.style.left =
-            posicaoX + "px";
-
-        acessibilidade.style.top =
-            posicaoY + "px";
-    }
-}
-
-
-// =============================
+// =========================================
 // CARREGAR CONFIGURAÇÕES
-// =============================
+// =========================================
 
 aplicarTamanhoFonte();
 
-if (temaSalvo) {
+
+if (
+    temaSalvo === "tema-claro" ||
+    temaSalvo === "tema-escuro"
+) {
+
     aplicarTema(temaSalvo);
-}
 
-aplicarPosicao();
-
-
-// =============================
-// ABRIR / FECHAR PAINEL
-// =============================
-
-let moveu = false;
-
-botaoAcessibilidade.addEventListener("click", function () {
-
-    if (moveu) {
-        moveu = false;
-        return;
-    }
-
-    painelAcessibilidade.classList.toggle("exibir");
-});
-
-
-// =============================
-// ARRASTAR BOTÃO
-// =============================
-
-let arrastando = false;
-
-let deslocamentoX = 0;
-let deslocamentoY = 0;
-
-botaoAcessibilidade.addEventListener("mousedown", function (evento) {
-
-    arrastando = true;
-    moveu = false;
-
-    const rect =
-        acessibilidade.getBoundingClientRect();
-
-    deslocamentoX =
-        evento.clientX - rect.left;
-
-    deslocamentoY =
-        evento.clientY - rect.top;
-
-    acessibilidade.classList.add("arrastando");
-});
-
-
-document.addEventListener("mousemove", function (evento) {
-
-    if (!arrastando) {
-        return;
-    }
-
-    moveu = true;
-
-    let novaPosicaoX =
-        evento.clientX - deslocamentoX;
-
-    let novaPosicaoY =
-        evento.clientY - deslocamentoY;
-
-
-    const limiteX =
-        window.innerWidth -
-        acessibilidade.offsetWidth;
-
-    const limiteY =
-        window.innerHeight -
-        acessibilidade.offsetHeight;
-
-
-    novaPosicaoX =
-        Math.max(
-            0,
-            Math.min(novaPosicaoX, limiteX)
-        );
-
-    novaPosicaoY =
-        Math.max(
-            0,
-            Math.min(novaPosicaoY, limiteY)
-        );
-
-
-    acessibilidade.style.left =
-        novaPosicaoX + "px";
-
-    acessibilidade.style.top =
-        novaPosicaoY + "px";
-
-
-    localStorage.setItem(
-        "acessibilidadeX",
-        novaPosicaoX
-    );
-
-    localStorage.setItem(
-        "acessibilidadeY",
-        novaPosicaoY
-    );
-});
-
-
-document.addEventListener("mouseup", function () {
-
-    arrastando = false;
-
-    acessibilidade.classList.remove("arrastando");
-});
-
-
-// =============================
-// MANTER BOTÃO DENTRO DA TELA
-// =============================
-
-window.addEventListener("resize", function () {
-
-    const rect =
-        acessibilidade.getBoundingClientRect();
-
-
-    let novaPosicaoX = rect.left;
-    let novaPosicaoY = rect.top;
-
-
-    const limiteX =
-        window.innerWidth -
-        acessibilidade.offsetWidth;
-
-    const limiteY =
-        window.innerHeight -
-        acessibilidade.offsetHeight;
-
-
-    novaPosicaoX =
-        Math.max(
-            0,
-            Math.min(novaPosicaoX, limiteX)
-        );
-
-    novaPosicaoY =
-        Math.max(
-            0,
-            Math.min(novaPosicaoY, limiteY)
-        );
-
-
-    acessibilidade.style.left =
-        novaPosicaoX + "px";
-
-    acessibilidade.style.top =
-        novaPosicaoY + "px";
-
-
-    localStorage.setItem(
-        "acessibilidadeX",
-        novaPosicaoX
-    );
-
-    localStorage.setItem(
-        "acessibilidadeY",
-        novaPosicaoY
-    );
-});
-
-
-// =============================
-// TEMA CLARO
-// =============================
-
-temaClaro.addEventListener("click", function () {
-
-    aplicarTema("tema-claro");
-});
-
-
-// =============================
-// TEMA ESCURO
-// =============================
-
-temaEscuro.addEventListener("click", function () {
+} else {
 
     aplicarTema("tema-escuro");
-});
+}
 
 
-// =============================
+// =========================================
+// TEMA CLARO
+// =========================================
+
+if (temaClaro) {
+
+    temaClaro.addEventListener(
+        "click",
+        function () {
+
+            aplicarTema("tema-claro");
+
+        }
+    );
+}
+
+
+// =========================================
+// TEMA ESCURO
+// =========================================
+
+if (temaEscuro) {
+
+    temaEscuro.addEventListener(
+        "click",
+        function () {
+
+            aplicarTema("tema-escuro");
+
+        }
+    );
+}
+
+
+// =========================================
 // AUMENTAR FONTE
-// =============================
+// =========================================
 
-aumentarFonte.addEventListener("click", function () {
+if (aumentarFonte) {
 
-    if (tamanhoFonte < 24) {
+    aumentarFonte.addEventListener(
+        "click",
+        function () {
 
-        tamanhoFonte += 1;
+            if (tamanhoFonte < 24) {
 
-        aplicarTamanhoFonte();
-    }
-});
+                tamanhoFonte += 1;
+
+                aplicarTamanhoFonte();
+            }
+
+        }
+    );
+}
 
 
-// =============================
+// =========================================
 // DIMINUIR FONTE
-// =============================
+// =========================================
 
-diminuirFonte.addEventListener("click", function () {
+if (diminuirFonte) {
 
-    if (tamanhoFonte > 12) {
+    diminuirFonte.addEventListener(
+        "click",
+        function () {
 
-        tamanhoFonte -= 1;
+            if (tamanhoFonte > 12) {
 
-        aplicarTamanhoFonte();
-    }
-});
+                tamanhoFonte -= 1;
+
+                aplicarTamanhoFonte();
+            }
+
+        }
+    );
+}

@@ -4,38 +4,47 @@ const categorias = [
         id: 1,
         nome: "Mouses",
         descricao: "Celulares, televisores e eletrônicos em geral",
-        imagem: "assets/imagens/Mouse Logitech.png"
+        imagem: "assets/imagens/mouselogitech.png",
+        href: "produtos.html?categoria=1"
     },
     {
         id: 2,
         nome: "Monitores",
         descricao: "Monitores, Notebooks, computadores e acessórios",
-        imagem: "assets/imagens/monitor.png"
+        imagem: "assets/imagens/monitor.png",
+        href: "produtos.html?categoria=2"
     },
     {
         id: 3,
         nome: "Fones",
         descricao: "Smartphones e acessórios",
-        imagem: "assets/imagens/Fone razer.png"
+        imagem: "assets/imagens/Fone razer.png",
+        href: "produtos.html?categoria=3"
     },
     {
         id: 4,
         nome: "Teclados",
         descricao: "Móveis para casa e escritório",
-        imagem: "assets/imagens/tecladoredragao.png"
+        imagem: "assets/imagens/tecladoredragao.png",
+        href: "produtos.html?categoria=4"
     },
     {
         id: 5,
         nome: "Controles",
         descricao: "Jogos, consoles e acessórios",
-        imagem: "assets/imagens/Controleps5.png"
+        imagem: "assets/imagens/Controleps5.png",
+        href: "produtos.html?categoria=5"
     }
 ];
 
 
-// Carrega as categorias na página
+// =========================================
+// CARREGAR CATEGORIAS
+// =========================================
+
 const listaCategorias =
     document.getElementById("listaCategorias");
+
 
 if (listaCategorias) {
 
@@ -43,35 +52,24 @@ if (listaCategorias) {
 
         listaCategorias.innerHTML += `
 
-            <div class="categoria-card" onclick="abrirCategoria(${categoria.id})">
+            <a
+                href="${categoria.href}"
+                class="categoria-card"
+            >
 
-    <img src="${categoria.imagem}" 
-         alt="${categoria.nome}">
+                <img
+                    src="${categoria.imagem}"
+                    alt="${categoria.nome}"
+                >
 
-    <p>${categoria.nome}</p>
+                <p>
+                    ${categoria.nome}
+                </p>
 
-</div>
+            </a>
 
         `;
 
     });
 
-}
-
-
-// Abre uma categoria
-function abrirCategoria(id) {
-
-    const categoria = categorias.find(
-        x => x.id === id
-    );
-
-    if (categoria) {
-
-        alert(
-            "Categoria selecionada: " +
-            categoria.nome
-        );
-
-    }
 }
