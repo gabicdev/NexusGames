@@ -32,7 +32,7 @@ const categorias = [
         id: 5,
         nome: "Controles",
         descricao: "Jogos, consoles e acessórios",
-        imagem: "assets/imagens/Controleps5.png",
+        imagem: "assets/imagens/controleps5.png",
         href: "produtos.html?categoria=5"
     }
 ];
