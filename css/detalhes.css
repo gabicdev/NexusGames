@@ -807,6 +807,21 @@
     text-decoration: none;
 }
 
+/* PRODUTO NÃO ENCONTRADO */
+
+body.tema-claro .produto-nao-encontrado {
+    background: #ffffff;
+    border-color: #ddddE5;
+}
+
+body.tema-claro .produto-nao-encontrado h2 {
+    color: #202027;
+}
+
+body.tema-claro .produto-nao-encontrado p {
+    color: #696973;
+}
+
 
 /* =========================================
    TEMA CLARO
