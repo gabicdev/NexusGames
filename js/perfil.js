@@ -1,7 +1,7 @@
+
 /* =========================================
    EDITAR PERFIL - SPAN GAMES
 ========================================= */
-
 
 /* =========================================
    ELEMENTOS DO FORMULÁRIO
@@ -33,6 +33,9 @@ const perfilCidade =
 
 const perfilUf =
     document.getElementById("perfilUf");
+
+const perfilNumero =
+    document.getElementById("perfilNumero");
 
 const perfilCelular =
     document.getElementById("perfilCelular");
@@ -86,18 +89,16 @@ let usuarios =
    PROCURAR USUÁRIO CADASTRADO
 ========================================= */
 
-let indiceUsuario =
-    usuarios.findIndex(
+let indiceUsuario = usuarioLogado
+    ? usuarios.findIndex(
         function (usuario) {
-
             return (
                 usuario.login ===
                 usuarioLogado.login
             );
-
         }
-    );
-
+    )
+    : -1;
 
 let usuarioCompleto = null;
 
@@ -113,12 +114,11 @@ if (indiceUsuario !== -1) {
 
 }
 
-
 /* =========================================
    CONTA TESTER
 ========================================= */
 
-else {
+else if (usuarioLogado) {
 
     usuarioCompleto = {
 
@@ -146,6 +146,9 @@ else {
         uf:
             "",
 
+        numero:
+            usuarioLogado.numero || "",
+
         celular:
             "",
 
@@ -171,81 +174,70 @@ if (usuarioCompleto) {
             usuarioCompleto.nome || "";
     }
 
-
     if (perfilCpf) {
 
         perfilCpf.value =
             usuarioCompleto.cpf || "";
 
-        /*
-           CPF NÃO PODE SER ALTERADO
-        */
-
+        // CPF não pode ser alterado
         perfilCpf.readOnly = true;
-
     }
-
 
     if (perfilEmail) {
         perfilEmail.value =
             usuarioCompleto.email || "";
     }
 
-
     if (perfilCep) {
         perfilCep.value =
             usuarioCompleto.cep || "";
     }
-
 
     if (perfilRua) {
         perfilRua.value =
             usuarioCompleto.rua || "";
     }
 
-
     if (perfilBairro) {
         perfilBairro.value =
             usuarioCompleto.bairro || "";
     }
-
 
     if (perfilCidade) {
         perfilCidade.value =
             usuarioCompleto.cidade || "";
     }
 
-
     if (perfilUf) {
         perfilUf.value =
             usuarioCompleto.uf || "";
     }
 
+    /* NÚMERO DA RESIDÊNCIA */
+
+    if (perfilNumero) {
+        perfilNumero.value =
+            usuarioCompleto.numero ?? "";
+    }
 
     if (perfilCelular) {
         perfilCelular.value =
             usuarioCompleto.celular || "";
     }
 
-
     if (perfilLogin) {
         perfilLogin.value =
             usuarioCompleto.login || "";
     }
 
-
     /*
-       NÃO MOSTRAMOS A SENHA ANTIGA.
-
-       Esses campos ficam vazios.
-       Só serão usados se a pessoa
-       quiser trocar a senha.
+       Não mostramos a senha antiga.
+       Os campos ficam vazios.
     */
 
     if (perfilSenha) {
         perfilSenha.value = "";
     }
-
 
     if (perfilConfirmarSenha) {
         perfilConfirmarSenha.value = "";
@@ -265,7 +257,6 @@ if (formPerfil) {
         function (evento) {
 
             evento.preventDefault();
-
 
             /* =================================
                PEGAR NOVOS DADOS
@@ -306,6 +297,13 @@ if (formPerfil) {
                     ? perfilUf.value.trim()
                     : "";
 
+            /* NÚMERO DA RESIDÊNCIA */
+
+            const novoNumero =
+                perfilNumero
+                    ? perfilNumero.value.trim()
+                    : (usuarioCompleto.numero ?? "");
+
             const novoCelular =
                 perfilCelular
                     ? perfilCelular.value.trim()
@@ -343,9 +341,24 @@ if (formPerfil) {
                 );
 
                 return;
-
             }
 
+            /* =================================
+               VALIDAR NÚMERO DA RESIDÊNCIA
+            ================================= */
+
+            if (
+                perfilNumero &&
+                !/^\d{1,10}$/.test(novoNumero)
+            ) {
+
+                mostrarMensagem(
+                    "Informe um número de residência válido.",
+                    "erro"
+                );
+
+                return;
+            }
 
             /* =================================
                VERIFICAR LOGIN REPETIDO
@@ -356,16 +369,12 @@ if (formPerfil) {
                     function (usuario, indice) {
 
                         return (
-                            usuario.login ===
-                                novoLogin &&
-
-                            indice !==
-                                indiceUsuario
+                            usuario.login === novoLogin &&
+                            indice !== indiceUsuario
                         );
 
                     }
                 );
-
 
             if (loginJaExiste) {
 
@@ -375,9 +384,7 @@ if (formPerfil) {
                 );
 
                 return;
-
             }
-
 
             /* =================================
                VALIDAR NOVA SENHA
@@ -399,9 +406,7 @@ if (formPerfil) {
                     );
 
                     return;
-
                 }
-
 
                 if (novaSenha.length < 6) {
 
@@ -411,11 +416,9 @@ if (formPerfil) {
                     );
 
                     return;
-
                 }
 
             }
-
 
             /* =================================
                ATUALIZAR DADOS
@@ -442,20 +445,18 @@ if (formPerfil) {
             usuarioCompleto.uf =
                 novaUf;
 
+            usuarioCompleto.numero =
+                novoNumero;
+
             usuarioCompleto.celular =
                 novoCelular;
 
             usuarioCompleto.login =
                 novoLogin;
 
-
             /*
-               NÃO ALTERAMOS O CPF.
-
-               usuarioCompleto.cpf
-               continua exatamente igual.
+               Não alteramos o CPF.
             */
-
 
             /* =================================
                ALTERAR SENHA SE PREENCHIDA
@@ -468,7 +469,6 @@ if (formPerfil) {
 
             }
 
-
             /* =================================
                SALVAR USUÁRIO CADASTRADO
             ================================= */
@@ -478,14 +478,12 @@ if (formPerfil) {
                 usuarios[indiceUsuario] =
                     usuarioCompleto;
 
-
                 localStorage.setItem(
                     "usuarios",
                     JSON.stringify(usuarios)
                 );
 
             }
-
 
             /* =================================
                ATUALIZAR SESSÃO
@@ -502,16 +500,17 @@ if (formPerfil) {
                     novoEmail,
 
                 login:
-                    novoLogin
+                    novoLogin,
+
+                numero:
+                    novoNumero
 
             };
-
 
             localStorage.setItem(
                 "usuarioLogado",
                 JSON.stringify(usuarioLogado)
             );
-
 
             /* =================================
                ATUALIZAR HEADER
@@ -522,14 +521,12 @@ if (formPerfil) {
                     "textoUsuario"
                 );
 
-
             if (textoUsuario) {
 
                 textoUsuario.textContent =
                     `Olá, ${novoNome}`;
 
             }
-
 
             /* =================================
                LIMPAR CAMPOS DE SENHA
@@ -539,11 +536,9 @@ if (formPerfil) {
                 perfilSenha.value = "";
             }
 
-
             if (perfilConfirmarSenha) {
                 perfilConfirmarSenha.value = "";
             }
-
 
             /* =================================
                SUCESSO
@@ -573,19 +568,15 @@ function mostrarMensagem(
         return;
     }
 
-
     perfilMensagem.textContent =
         mensagem;
-
 
     if (tipo === "erro") {
 
         perfilMensagem.style.color =
             "#ef7777";
 
-    }
-
-    else {
+    } else {
 
         perfilMensagem.style.color =
             "#78d69b";
@@ -741,3 +732,68 @@ btnConfirmarExclusao?.addEventListener(
 
     }
 );
+
+
+/* =========================================
+   MOSTRAR / ESCONDER SENHAS
+   SPAN GAMES
+========================================= */
+
+document.querySelectorAll(".perfil-toggle-senha")
+    .forEach(function (botao) {
+
+        botao.addEventListener("click", function () {
+
+            /* PEGAR O CAMPO DE SENHA */
+
+            const idCampo = botao.dataset.alvo;
+
+            const campo = document.getElementById(idCampo);
+
+            if (!campo) return;
+
+            /* VERIFICAR SE A SENHA ESTÁ VISÍVEL */
+
+            const senhaVisivel = campo.type === "text";
+
+            /* MOSTRAR OU ESCONDER */
+
+            campo.type = senhaVisivel
+                ? "password"
+                : "text";
+
+            /* ALTERAR ÍCONE */
+
+            const icone = botao.querySelector("i");
+
+            if (icone) {
+
+                icone.classList.toggle(
+                    "fa-eye",
+                    senhaVisivel
+                );
+
+                icone.classList.toggle(
+                    "fa-eye-slash",
+                    !senhaVisivel
+                );
+
+            }
+
+            /* ACESSIBILIDADE */
+
+            botao.setAttribute(
+                "aria-pressed",
+                String(!senhaVisivel)
+            );
+
+            botao.setAttribute(
+                "aria-label",
+                senhaVisivel
+                    ? "Mostrar senha"
+                    : "Ocultar senha"
+            );
+
+        });
+
+    });

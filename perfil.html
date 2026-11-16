@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -34,7 +35,6 @@
 
 </head>
 
-
 <body>
 
     <!-- =========================================
@@ -52,7 +52,6 @@
 
         <section class="perfil-container">
 
-
             <!-- =====================================
                  CABEÇALHO
             ====================================== -->
@@ -60,11 +59,8 @@
             <div class="perfil-cabecalho">
 
                 <div class="perfil-avatar">
-
                     <i class="fa-regular fa-user"></i>
-
                 </div>
-
 
                 <div>
 
@@ -72,9 +68,7 @@
                         MINHA CONTA
                     </span>
 
-                    <h1>
-                        Editar Perfil
-                    </h1>
+                    <h1>Editar Perfil</h1>
 
                     <p>
                         Atualize os dados da sua conta.
@@ -91,7 +85,6 @@
 
             <form id="formPerfil">
 
-
                 <!-- =================================
                      DADOS PESSOAIS
                 ================================== -->
@@ -99,16 +92,11 @@
                 <div class="perfil-secao">
 
                     <h2>
-
                         <i class="fa-regular fa-user"></i>
-
                         Dados Pessoais
-
                     </h2>
 
-
                     <div class="perfil-grid perfil-grid-dados">
-
 
                         <!-- NOME -->
 
@@ -198,16 +186,11 @@
                 <div class="perfil-secao">
 
                     <h2>
-
                         <i class="fa-solid fa-location-dot"></i>
-
                         Endereço
-
                     </h2>
 
-
                     <div class="perfil-grid perfil-grid-endereco">
-
 
                         <!-- CEP -->
 
@@ -248,6 +231,35 @@
 
                                 <label for="perfilRua">
                                     Rua
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- NÚMERO DA RESIDÊNCIA -->
+
+                        <div class="perfil-campo">
+
+                            <div class="perfil-input">
+
+                                <i class="fa-solid fa-house"></i>
+
+                                <input
+                                    type="text"
+                                    id="perfilNumero"
+                                    name="numero"
+                                    placeholder=" "
+                                    inputmode="numeric"
+                                    pattern="[0-9]{1,10}"
+                                    maxlength="10"
+                                    autocomplete="address-line2"
+                                    required
+                                >
+
+                                <label for="perfilNumero">
+                                    Número da residência
                                 </label>
 
                             </div>
@@ -336,13 +348,9 @@
                 <div class="perfil-secao">
 
                     <h2>
-
                         <i class="fa-solid fa-phone"></i>
-
                         Contato
-
                     </h2>
-
 
                     <div class="perfil-grid perfil-grid-contato">
 
@@ -380,11 +388,8 @@
                 <div class="perfil-secao">
 
                     <h2>
-
                         <i class="fa-solid fa-lock"></i>
-
                         Acesso
-
                     </h2>
 
 
@@ -412,68 +417,84 @@
                     </div>
 
 
-                    <!-- =================================
-                         SENHAS
-                    ================================== -->
+                    
+<!-- =================================
+     SENHAS
+================================== -->
 
-                    <div class="perfil-grid perfil-grid-senha">
+<div class="perfil-grid perfil-grid-senha">
 
+    <!-- NOVA SENHA -->
 
-                        <!-- NOVA SENHA -->
+    <div class="perfil-campo">
 
-                        <div class="perfil-campo">
+        <div class="perfil-input perfil-input-senha">
 
-                            <div class="perfil-input">
+            <i class="fa-solid fa-key"></i>
 
-                                <i class="fa-solid fa-key"></i>
+            <input
+                type="password"
+                id="perfilSenha"
+                placeholder=" "
+                autocomplete="new-password"
+            >
 
-                                <input
-                                    type="password"
-                                    id="perfilSenha"
-                                    placeholder=" "
-                                    autocomplete="new-password"
-                                >
+            <label for="perfilSenha">
+                Nova senha
+            </label>
 
-                                <label for="perfilSenha">
-                                    Nova senha
-                                </label>
+            <button
+                type="button"
+                class="perfil-toggle-senha"
+                data-alvo="perfilSenha"
+                aria-label="Mostrar nova senha"
+                aria-pressed="false"
+            >
+                <i class="fa-regular fa-eye"></i>
+            </button>
 
-                            </div>
+        </div>
 
-                        </div>
-
-
-                        <!-- CONFIRMAR SENHA -->
-
-                        <div class="perfil-campo">
-
-                            <div class="perfil-input">
-
-                                <i class="fa-solid fa-key"></i>
-
-                                <input
-                                    type="password"
-                                    id="perfilConfirmarSenha"
-                                    placeholder=" "
-                                    autocomplete="new-password"
-                                >
-
-                                <label for="perfilConfirmarSenha">
-                                    Confirmar nova senha
-                                </label>
-
-                            </div>
-
-                        </div>
-
-                    </div>
+    </div>
 
 
-                    <p class="senha-aviso">
-                        Deixe os campos de senha vazios caso não queira alterá-la.
-                    </p>
+    <!-- CONFIRMAR SENHA -->
 
-                </div>
+    <div class="perfil-campo">
+
+        <div class="perfil-input perfil-input-senha">
+
+            <i class="fa-solid fa-key"></i>
+
+            <input
+                type="password"
+                id="perfilConfirmarSenha"
+                placeholder=" "
+                autocomplete="new-password"
+            >
+
+            <label for="perfilConfirmarSenha">
+                Confirmar nova senha
+            </label>
+
+            <button
+                type="button"
+                class="perfil-toggle-senha"
+                data-alvo="perfilConfirmarSenha"
+                aria-label="Mostrar confirmação da senha"
+                aria-pressed="false"
+            >
+                <i class="fa-regular fa-eye"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
 
 
                 <!-- =================================
@@ -499,7 +520,6 @@
                         Cancelar
                     </a>
 
-
                     <button
                         type="submit"
                         class="btn-salvar"
@@ -515,16 +535,43 @@
 
             </form>
 
-            <!-- EXCLUIR CONTA: fora do formulário -->
-            <section class="excluir-conta-area" aria-labelledby="tituloAreaExcluirConta">
+
+            <!-- =====================================
+                 EXCLUIR CONTA
+            ====================================== -->
+
+            <section
+                class="excluir-conta-area"
+                aria-labelledby="tituloAreaExcluirConta"
+            >
+
                 <div class="excluir-conta-info">
-                    <h2 id="tituloAreaExcluirConta">Excluir minha conta</h2>
-                    <p>Esta ação é permanente e não pode ser desfeita.</p>
+
+                    <h2 id="tituloAreaExcluirConta">
+                        Excluir minha conta
+                    </h2>
+
+                    <p>
+                        Esta ação é permanente e não pode ser desfeita.
+                    </p>
+
                 </div>
-                <button type="button" id="btnExcluirConta" class="btn-excluir-conta">
-                    <i class="fa-solid fa-trash" aria-hidden="true"></i>
+
+                <button
+                    type="button"
+                    id="btnExcluirConta"
+                    class="btn-excluir-conta"
+                >
+
+                    <i
+                        class="fa-solid fa-trash"
+                        aria-hidden="true"
+                    ></i>
+
                     Excluir conta
+
                 </button>
+
             </section>
 
         </section>
@@ -533,20 +580,60 @@
 
 
     <!-- =========================================
-         SCRIPTS
+         MODAL DE CONFIRMAÇÃO DE EXCLUSÃO
     ========================================== -->
 
-    <!-- MODAL DE CONFIRMAÇÃO DE EXCLUSÃO -->
-    <div id="modalExcluirConta" class="modal-excluir-conta" hidden>
-        <div class="modal-excluir-conteudo" role="dialog" aria-modal="true" aria-labelledby="tituloExcluirConta" aria-describedby="descricaoExcluirConta">
-            <h2 id="tituloExcluirConta">Excluir sua conta?</h2>
-            <p id="descricaoExcluirConta">Seu cadastro salvo neste navegador será excluído permanentemente. Esta ação não pode ser desfeita.</p>
+    <div
+        id="modalExcluirConta"
+        class="modal-excluir-conta"
+        hidden
+    >
+
+        <div
+            class="modal-excluir-conteudo"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="tituloExcluirConta"
+            aria-describedby="descricaoExcluirConta"
+        >
+
+            <h2 id="tituloExcluirConta">
+                Excluir sua conta?
+            </h2>
+
+            <p id="descricaoExcluirConta">
+                Seu cadastro salvo neste navegador será excluído permanentemente.
+                Esta ação não pode ser desfeita.
+            </p>
+
             <div class="modal-excluir-acoes">
-                <button type="button" id="btnCancelarExclusao" class="btn-cancelar-exclusao">Cancelar</button>
-                <button type="button" id="btnConfirmarExclusao" class="btn-confirmar-exclusao">Sim, excluir conta</button>
+
+                <button
+                    type="button"
+                    id="btnCancelarExclusao"
+                    class="btn-cancelar-exclusao"
+                >
+                    Cancelar
+                </button>
+
+                <button
+                    type="button"
+                    id="btnConfirmarExclusao"
+                    class="btn-confirmar-exclusao"
+                >
+                    Sim, excluir conta
+                </button>
+
             </div>
+
         </div>
+
     </div>
+
+
+    <!-- =========================================
+         SCRIPTS
+    ========================================== -->
 
     <script src="js/header.js"></script>
 

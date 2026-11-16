@@ -1,4 +1,42 @@
 
+/* =========================================
+   SPAN GAMES - PROTEGER CARRINHO
+========================================= */
+
+function protegerCarrinho() {
+
+    let usuarioLogado = null;
+
+    try {
+        usuarioLogado = JSON.parse(
+            localStorage.getItem("usuarioLogado") || "null"
+        );
+    } catch (erro) {
+        console.error("Erro ao verificar login:", erro);
+    }
+
+    if (!usuarioLogado) {
+
+        localStorage.setItem(
+            "redirecionarAposLogin",
+            "carrinho.html"
+        );
+
+        window.location.replace(
+            "erro-pagamento-login.html"
+        );
+
+        return false;
+    }
+
+    return true;
+}
+
+if (!protegerCarrinho()) {
+    // Usuário será redirecionado.
+}
+
+
 
 // =========================================
 // ADICIONAR PRODUTO AO CARRINHO

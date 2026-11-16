@@ -732,6 +732,79 @@ fetch("header.html")
         iniciarBuscaProdutos();
 
 
+
+/* =========================================
+   CONTADOR DO CARRINHO - SPAN GAMES
+========================================= */
+
+function atualizarContadorCarrinho() {
+
+    const contador =
+        document.getElementById("contadorCarrinho");
+
+    if (!contador) return;
+
+    try {
+
+        const carrinho = JSON.parse(
+            localStorage.getItem("carrinho") || "[]"
+        );
+
+        if (!Array.isArray(carrinho)) {
+            contador.textContent = "0";
+            return;
+        }
+
+        const total = carrinho.reduce(
+            (soma, produto) => {
+
+                return soma +
+                    (Number(produto.quantidade) || 1);
+
+            },
+            0
+        );
+
+        contador.textContent = total;
+
+    } catch (erro) {
+
+        console.error(
+            "Erro ao atualizar carrinho:",
+            erro
+        );
+
+        contador.textContent = "0";
+
+    }
+}
+
+/* ATUALIZAR QUANDO O HEADER CARREGAR */
+
+atualizarContadorCarrinho();
+
+/* ATUALIZAR ENTRE ABAS */
+
+window.addEventListener("storage", evento => {
+
+    if (evento.key === "carrinho") {
+        atualizarContadorCarrinho();
+    }
+
+});
+
+/* ATUALIZAR AO VOLTAR PARA A PÁGINA */
+
+window.addEventListener("pageshow", () => {
+    atualizarContadorCarrinho();
+});
+
+/* PERMITIR ATUALIZAÇÃO NA MESMA ABA */
+
+window.atualizarContadorCarrinho =
+    atualizarContadorCarrinho;
+
+
         /* =====================================
            CARREGAR ACESSIBILIDADE
         ===================================== */

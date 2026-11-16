@@ -350,3 +350,28 @@
         margin-left: auto;
     }
 }
+
+/* =========================================
+   CARRINHO - FOOTER NO FINAL DA PÁGINA
+========================================= */
+
+/* ESTRUTURA DA PÁGINA */
+
+body:has(.pagina-carrinho) {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* CONTEÚDO DO CARRINHO */
+
+.pagina-carrinho {
+    flex: 1;
+}
+
+/* FOOTER */
+
+body:has(.pagina-carrinho) footer {
+    margin-top: auto;
+    flex-shrink: 0;
+}

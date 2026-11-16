@@ -980,3 +980,69 @@ body.tema-claro
         width: 100%;
     }
 }
+
+/* NÚMERO DA RESIDÊNCIA - TEXTO BRANCO */
+
+#perfilNumero + label,
+#perfilNumero:placeholder-shown + label,
+#perfilNumero:focus + label,
+#perfilNumero:not(:placeholder-shown) + label {
+    color: #ffffff;
+}
+
+/* =========================================
+   MOSTRAR / ESCONDER SENHA
+========================================= */
+
+.perfil-input-senha input {
+    padding-right: 45px;
+}
+
+/* BOTÃO DO OLHINHO */
+
+.perfil-toggle-senha {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    color: #a56be8;
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* ÍCONE */
+
+.perfil-input .perfil-toggle-senha i {
+    position: static;
+    transform: none;
+    color: inherit;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+/* AO PASSAR O MOUSE */
+
+.perfil-toggle-senha:hover {
+    color: #ffffff;
+}
+
+/* FOCO PELO TECLADO */
+
+.perfil-toggle-senha:focus-visible {
+    outline: 2px solid #a855f7;
+    outline-offset: 2px;
+    border-radius: 5px;
+}
