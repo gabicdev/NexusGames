@@ -32,9 +32,7 @@ function protegerCarrinho() {
     return true;
 }
 
-if (!protegerCarrinho()) {
-    // Usuário será redirecionado.
-}
+
 
 
 

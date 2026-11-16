@@ -31,6 +31,42 @@ fetch("header.html")
         header.innerHTML = data;
 
 
+
+/* =========================================
+   PROTEGER CLIQUE NO CARRINHO
+========================================= */
+
+const linksCarrinho = header.querySelectorAll(
+    'a[href*="carrinho.html"]'
+);
+
+linksCarrinho.forEach(function (link) {
+
+    link.addEventListener("click", function (evento) {
+
+        const usuarioLogado = JSON.parse(
+            localStorage.getItem("usuarioLogado") || "null"
+        );
+
+        if (!usuarioLogado) {
+
+            evento.preventDefault();
+
+            localStorage.setItem(
+                "redirecionarAposLogin",
+                "carrinho.html"
+            );
+
+            window.location.href =
+                "erro-pagamento-login.html";
+
+        }
+
+    });
+
+});
+
+
         /* =====================================
            ELEMENTOS DO USUÁRIO
         ===================================== */
